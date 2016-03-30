@@ -1,34 +1,98 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>Ionic Preview</title>
 
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
 
-    <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <!-- ionic/angularjs js -->
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
 
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="cordova.js"></script>
 
-    <!-- your app's js -->
-    <script src="js/app.js"></script>
-  </head>
-  <body ng-app="starter">
+  <!-- your app's js -->
+  <script src="js/app.js"></script>
+</head>
 
-    <ion-pane>
-      <ion-header-bar class="bar-stable">
-        <h1 class="title">Ionic Blank Starter</h1>
-      </ion-header-bar>
-      <ion-content>
-      </ion-content>
-    </ion-pane>
-  </body>
+<body ng-app="starter">
+  <ion-pane>
+    <!-- header -->
+    <ion-header-bar align-title="left" class="bar-positive">
+      <div class="buttons">
+        <button class="button" ng-click="doSomething()">Left Button</button>
+      </div>
+      <h1 class="title">Title!</h1>
+      <div class="buttons">
+        <button class="button">Right Button</button>
+      </div>
+    </ion-header-bar>
+
+    <!-- content: scrollable, fill avairable space -->
+    <ion-content>
+      <!-- check box-->
+      <ion-checkbox ng-model="isChecked">Checkbox</ion-checkbox>
+
+      <!-- button-->
+      <button class="button button-block">
+        Block Button
+      </button>
+
+      <!-- toggle -->
+      <ion-toggle ng-model="airplaneMode" toggle-class="toggle-default">Toggle Mode</ion-toggle>
+
+      <!-- slider -->
+      <div class="range">
+        <input type="range" name="name">
+      </div>
+
+      <!-- pull to refresh -->
+      <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()"></ion-refresher>
+
+      <!-- swipe to change slide (content will fill whole page) -->
+      <!-- <ion-slide-box on-slide-changed="slideHasChanged(index)">
+        <ion-slide>
+          <div class="box blue"><h1>BLUE</h1></div>
+        </ion-slide>
+        <ion-slide>
+          <div class="box yellow"><h1>YELLOW</h1></div>
+        </ion-slide>
+        <ion-slide>
+          <div class="box pink"><h1>PINK</h1></div>
+        </ion-slide>
+      </ion-slide-box> -->
+
+      <!-- swipe left to show item options -->
+      <ion-list>
+        <ion-item>
+          swipe left to show options
+          <ion-option-button class="button-positive">Share</ion-option-button>
+          <ion-option-button class="button-assertive">Edit</ion-option-button>
+        </ion-item>
+      </ion-list>
+
+      <!-- listview -->
+      <a class="item item-thumbnail-left" href="#">
+        <img src="https://pbs.twimg.com/profile_images/606585229034135553/2NqZJYQI.png">
+        <h2>Hello world</h2>
+        <p>I am Crazy.</p>
+      </a>
+      <a class="item item-thumbnail-left" href="#">
+        <img src="http://www.theandroid-mania.com/wp-content/uploads/2014/10/Apple-in-dust-bin-android.jpg">
+        <h2>yoyo</h2>
+        <p>I am Crazy.</p>
+      </a>
+
+    </ion-content>
+  </ion-pane>
+</body>
+
 </html>
