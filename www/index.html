@@ -23,12 +23,12 @@
     <script src="js/app.js"></script>
   </head>
 
-  <body ng-app="starter">
+  <body ng-app="starter" ng-controller="MainCtrl">
     <ion-pane>
       <!-- header -->
       <ion-header-bar align-title="left" class="bar-positive">
         <div class="buttons">
-          <button class="button" ng-click="cameraDemo()">camera demo</button>
+          <button class="button">Left Button</button>
         </div>
         <h1 class="title">Title!</h1>
         <div class="buttons">
@@ -42,8 +42,8 @@
         <ion-checkbox ng-model="isChecked">Checkbox</ion-checkbox>
 
         <!-- button-->
-        <button class="button button-block">
-          Block Button
+        <button class="button button-block" ng-click="androidmsg()">
+          Get Message from android
         </button>
 
         <!-- toggle -->
